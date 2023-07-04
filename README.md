@@ -36,7 +36,17 @@ To run the code and execute the tutorials in this repository, you need to have t
 
 ## Usage
 
-To get started with the tutorials, follow these steps:
+I recommend you to follow Daniel Bourke's YouTube video or website to follow along.
+
+<details>
+  <summary>Click to expand</summary>
+
+  This is the sub-text that will be hidden by default. It will be revealed when the toggle is clicked.
+
+  You can add more content here, such as additional explanations, instructions, or examples.
+</details>
+
+Or to get started with the tutorials, follow these steps:
 
 1. Clone this repository to your local machine using the following command:
 
