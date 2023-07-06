@@ -13,16 +13,16 @@ The repository is organized as follows:
 - **data**: This folder contains the datasets used in the tutorials.
 - **going_modular**: This folder contains Python scripts related to the modular implementation of deep learning models using PyTorch.
 - **notebooks**: This folder contains a series of Jupyter Notebook tutorials covering various topics in PyTorch. Each notebook corresponds to a specific topic and includes my implementation based on Daniel Bourke's tutorial, along with additional modifications and comments for better comprehension. The notebooks are named and organized as follows:
-    - 00. PyTorch Fundamentals
-    - 01. PyTorch Workflow Fundamentals
-    - 02. PyTorch Neural Network Classification
-    - 03. PyTorch Computer Vision
-    - 04. PyTorch Custom Datasets
-    - 05. PyTorch Going Modular
-    - 06. PyTorch Transfer Learning
-    - 07. PyTorch Experiment Tracking
-    - 08. PyTorch Paper Replicating (Undergoing)
-    - 09. PyTorch Model Deployment (Soon)
+    - 0. PyTorch Fundamentals
+    - 1. PyTorch Workflow Fundamentals
+    - 2. PyTorch Neural Network Classification
+    - 3. PyTorch Computer Vision
+    - 4. PyTorch Custom Datasets
+    - 5. PyTorch Going Modular
+    - 6. PyTorch Transfer Learning
+    - 7. PyTorch Experiment Tracking
+    - 8. PyTorch Paper Replicating (Undergoing)
+    - 9. PyTorch Model Deployment (Soon)
 
 ## Requirements
 
