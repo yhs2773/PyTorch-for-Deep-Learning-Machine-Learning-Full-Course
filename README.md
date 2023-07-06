@@ -1,6 +1,6 @@
 # PyTorch for Deep Learning and Machine Learning Full Course
 
-Welcome to the PyTorch for Deep Learning and Machine Learning Full Course repository! This repository contains my personal implementation of Daniel Bourke's PyTorch tutorial. I have followed the original code from the tutorial videos and made some modifications and added comments to enhance understanding. I hope you find it useful in your learning journey.
+Welcome to the PyTorch for Deep Learning and Machine Learning Full Course repository! This repository contains my implementation of Daniel Bourke's PyTorch tutorial. I have followed the original code from the tutorial videos and made some modifications and added comments to enhance understanding. I hope you find it useful in your learning journey.
 
 ## Introduction
 
@@ -26,17 +26,17 @@ The repository is organized as follows:
 
 ## Requirements
 
-I've used Google Colaboratory to create notebooks, so there isn't a `requirements.txt`.
+I've used Google Colaboratory to create notebooks, so there isn't a `requirements.txt` file.
 
 To run the code and execute the tutorials in this repository, you need to have the following dependencies installed:
 
 - Python (version 3.6 or above)
-- PyTorch (version 1.9.0 or above)
+- PyTorch (version 1.12.0 or above)
 - Jupyter Notebook
 
 ## Usage
 
-I recommend you to follow Daniel Bourke's YouTube video or website to follow along.
+I recommend you to follow Daniel Bourke's YouTube video or website to create files from scratch.
 
 Otherwise, follow these steps to get started with the tutorials:
 
