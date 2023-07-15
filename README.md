@@ -36,7 +36,7 @@ To run the code and execute the tutorials in this repository, you need to have t
 
 ## Usage
 
-I recommend you to follow Daniel Bourke's YouTube video or website to create files from scratch.
+Since learning requires practice, I recommend you to follow Daniel Bourke's [YouTube video](https://www.youtube.com/watch?v=Z_ikDlimN6A) or [website](https://www.learnpytorch.io/) to create files from the beginning.
 
 Otherwise, follow these steps to get started with the tutorials:
 
