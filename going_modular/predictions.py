@@ -126,7 +126,7 @@ def pred_and_store(paths: List[pathlib.Path],
             pred_class = class_names[pred_label.cpu()]      # hardcode prediction class to be on CPU
         
             # 11. Make sure things in the dictionary are on CPU (required for inspecting predictions later on)
-            pred_dict["pred_prob"] = round(pred_prob.unsqueeze(0).max().cpu().item, 4)
+            pred_dict["pred_prob"] = round(pred_prob.unsqueeze(0).max().cpu().item(), 4)
             pred_dict["pred_class"] = pred_class
 
             # 12. End the timer and calculate the time per pred
