@@ -6,12 +6,14 @@ Main reference for code creation: https://www.learnpytorch.io/06_pytorch_transfe
 """
 import torch
 import torchvision
-from torchvision import transforms
 import matplotlib.pyplot as plt
+import pathlib
 
-from typing import List, Tuple
-
+from torchvision import transforms
+from typing import List, Tuple, Dict
 from PIL import Image
+from timeit import default_timer as timer
+from tqdm.auto import tqdm
 
 # Set device
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -81,3 +83,61 @@ def pred_and_plot_image(
         f"Pred: {class_names[target_image_pred_label]} | Prob: {target_image_pred_probs.max():.3f}"
     )
     plt.axis(False)
+
+# 1. Create a function to reutrn a list of dictionaries with sample, truth label, prediction, prediction probability and prediction time
+def pred_and_store(paths: List[pathlib.Path],
+                   model: torch.nn.Module,
+                   transform: torchvision.transforms,
+                   class_names: List[str],
+                   device: str = "cuda" if torch.cuda.is_available() else "cpu") -> List[Dict]:
+
+    # 2. Create an empty list to store predictino dictionaries
+    pred_list = []
+
+    # 3. Loop through target paths
+    for path in tqdm(paths):
+
+        # 4. Create an empty dictionary to store prediction information for each sample
+        pred_dict = {}
+
+        # 5. Get the sample path and ground truth class name
+        pred_dict["image_path"] = path
+        class_name = path.parent.stem
+        pred_dict["class_names"] = class_names
+
+        # 6. Start the prediction timer
+        start_time = timer()
+
+        # 7. Open the image path
+        img = Image.open(path)
+
+        # 8. Transform the image, add batch dimension, and put the image on the target device
+        transformed_image = transform(img).unsqueeze(0).to(device)
+
+        # 9. Prepare the model for inference by sending it to the target device and turn on the eval() mode
+        model.to(device)
+        model.eval()
+
+        # 10. Get prediction probability, prediction label, and prediction class
+        with torch.inference_mode():
+            pred_logit = model(transformed_image)           # perform inference on a target sample
+            pred_prob = torch.softmax(pred_logit, dim=1)    # turn logits into prediction probabilities
+            pred_label = torch.argmax(pred_prob, dim=1)     # turn prediction probabilities into prediction label
+            pred_class = class_names[pred_label.cpu()]      # hardcode prediction class to be on CPU
+        
+            # 11. Make sure things in the dictionary are on CPU (required for inspecting predictions later on)
+            pred_dict["pred_prob"] = round(pred_prob.unsqueeze(0).max().cpu().item, 4)
+            pred_dict["pred_class"] = pred_class
+
+            # 12. End the timer and calculate the time per pred
+            end_time = timer()
+            pred_dict["time_for_pred"] = round(end_time - start_time, 4)
+
+        # 13. Does the pred match the true label?
+        pred_dict["correct"] = class_name == pred_class
+
+        # 14. Add the dictionary to the list of preds
+        pred_list.append(pred_dict)
+    
+    # 15. Return a list of prediction dictionaries
+    return pred_list
