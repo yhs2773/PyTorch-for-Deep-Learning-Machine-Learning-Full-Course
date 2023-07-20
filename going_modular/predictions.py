@@ -103,7 +103,7 @@ def pred_and_store(paths: List[pathlib.Path],
         # 5. Get the sample path and ground truth class name
         pred_dict["image_path"] = path
         class_name = path.parent.stem
-        pred_dict["class_names"] = class_names
+        pred_dict["class_name"] = class_name
 
         # 6. Start the prediction timer
         start_time = timer()
