@@ -21,8 +21,8 @@ The repository is organized as follows:
     6. PyTorch Going Modular
     7. PyTorch Transfer Learning
     8. PyTorch Experiment Tracking
-    9. PyTorch Paper Replicating (Undergoing)
-    10. PyTorch Model Deployment (Soon)
+    9. PyTorch Paper Replicating
+    10. PyTorch Model Deployment (Undergoing)
 
 ## Requirements
 
