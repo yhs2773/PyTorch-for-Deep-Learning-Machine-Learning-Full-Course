@@ -22,7 +22,13 @@ The repository is organized as follows:
     7. PyTorch Transfer Learning
     8. PyTorch Experiment Tracking
     9. PyTorch Paper Replicating
-    10. PyTorch Model Deployment (Undergoing)
+    10. PyTorch Model Deployment (In progress)
+- **demos**: This folder contains a `.zip` file for creating the FoodVision mini demos, which contains the following:
+    1. `model.py`: a file defining the model architecture used for the demo
+    2. `app.py`: a file defining the Gradio demo application
+    3. `*.pth`: a trained PyTorch model file with the same architecture as in `model.py`
+    4. `requirements.txt`: a list of required packages for deploying the app
+    5. `examples/`: a folder containing various image examples to try with the demo
 
 ## Requirements
 
